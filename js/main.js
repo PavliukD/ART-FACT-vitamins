@@ -50,24 +50,27 @@
 
 
 // открытие модалок
-// (() => {
-//     const items = document.querySelectorAll('.catalog-list-item')
+(() => {
+    const items = document.querySelectorAll('.catalog-list-item')
 
-//     items.forEach(item => {
-//         const button = item.querySelector('.catalog-product-fast-link')
-//         const backdrop = item.querySelector('.catalog-backdrop')
+    items.forEach(item => {
+        const button = item.querySelector('.catalog-product-fast-link')
+        const backdrop = item.querySelector('.catalog-backdrop')
+        const close = item.querySelector('.close-modal')
 
-//         button.addEventListener('click', () => {
-//             backdrop.classList.remove('is-hidden')
-//         })
+        button.addEventListener('click', () => {
+            backdrop.classList.remove('is-hidden')
+        })
 
-//         body.addEventListener('click', (e) => {
-//             console.log(e.target)
-//             console.log(e.currentTarget)
-//             if (e.target !== backdrop){
-//                 return
-//             }
-//             backdrop.classList.add('is-hidden')
-//         })
-//     })
-// })();
+        backdrop.addEventListener('click', (e) => {
+            if (e.target !== e.currentTarget){
+                return
+            }
+            backdrop.classList.add('is-hidden')
+        })
+
+        close.addEventListener('click', () => {
+            backdrop.classList.add('is-hidden')
+        })
+    })
+})();
