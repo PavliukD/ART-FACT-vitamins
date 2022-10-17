@@ -76,7 +76,7 @@ section {
   margin: auto;
 }
 .is-hidden {
-  opacity: 0;
+  display: none;
 }
 
 .container {
@@ -115,9 +115,13 @@ section {
   }
 }
 
+.hero-wrap {
+  display: flex;
+  flex-direction: column-reverse;
+}
 @media (min-width: 768px) {
   .hero-wrap {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 }
@@ -219,6 +223,12 @@ section {
 
 .hero-banner {
   display: block;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../images/Union.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 @media (min-width: 768px) {
   .hero-banner {
@@ -229,6 +239,35 @@ section {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+  }
+}
+
+.hero-banner-background {
+  display: none;
+}
+@media (min-width: 768px) {
+  .hero-banner-background {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.hero-banner-background img {
+  width: 50%;
+}
+
+.hero-banner-img {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .hero-banner-img {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -420,7 +459,7 @@ section {
     font-weight: 700;
     font-size: 18px;
     line-height: 1.2;
-    margin-top: 25px;
+    margin-top: 15px;
     padding: 0;
   }
 }
@@ -636,6 +675,8 @@ section {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 90%;
+  margin: auto;
 }
 @media (min-width: 768px) {
   .art-n-fact-logo {
@@ -671,6 +712,10 @@ section {
   }
 }
 
+.about-logo-list {
+  margin-left: 0;
+  margin-right: auto;
+}
 @media (max-width: 768px) {
   .about-logo-list {
     width: -webkit-fit-content;
@@ -731,6 +776,10 @@ section {
   transition-delay: 0;
 }
 
+.catalog {
+  margin-top: 80px;
+}
+
 .catalog-list {
   display: flex;
   flex-wrap: wrap;
@@ -756,7 +805,6 @@ section {
 }
 
 .catalog-list-item-image-wrap {
-  outline: 1px solid tomato;
   width: 100%;
   display: flex;
   align-items: center;
@@ -810,6 +858,7 @@ section {
   letter-spacing: 0.03em;
   color: #000000;
   text-align: center;
+  background-color: transparent;
 }
 
 .catalog-product-more-link {
@@ -828,4 +877,304 @@ section {
   line-height: 70px;
   color: #FFFFFF;
   text-align: center;
+}
+
+.catalog-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.catalog-filter-item:not(:last-child)::after {
+  content: "/";
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 45px;
+  color: #5E5E5E;
+}
+
+.catalog-filter-item-text {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 45px;
+  color: #5E5E5E;
+}
+
+.catalog-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.list-item-modal {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 76%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 1123px;
+  background-color: white;
+  padding-left: 30px;
+  padding-right: 70px;
+  padding-bottom: 90px;
+}
+
+.modal-product-image {
+  width: 55%;
+  max-width: 796px;
+}
+
+.modal-text-block {
+  width: 34.7%;
+}
+.modal-text-block h3 {
+  width: 100%;
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: #000000;
+  margin-top: 60px;
+}
+
+.modal-text-short {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.modal-text-descr {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin-top: 35px;
+}
+
+.modal-descr-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.modal-descr-item {
+  max-width: 146px;
+}
+.modal-descr-item:not(:first-child) {
+  margin-left: 15px;
+}
+.modal-descr-item p {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.7551px;
+  line-height: 21px;
+  text-align: center;
+  color: #000000;
+  margin-top: 10px;
+}
+
+.modal-descr-item-icon-wrap {
+  display: flex;
+  width: 110px;
+  height: 110px;
+  background-color: #FFE699;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin: auto;
+}
+
+.modal-links-list {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 80px;
+}
+
+.modal-links-item:not(:first-child) {
+  margin-left: 15px;
+}
+.modal-links-item a {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 70px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #2B0BF2;
+  padding: 10px 30px;
+  border: 1px solid #2B0BF2;
+  border-radius: 100px;
+}
+
+.modal-same-link {
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+}
+.modal-same-link p {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 25px;
+  letter-spacing: 0.03em;
+  color: #000000;
+}
+.modal-same-link p::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  margin-top: 1px;
+}
+
+.benefits {
+  margin-top: 80px;
+}
+
+.benefits-title {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 70px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.benefits-list {
+  margin-top: 50px;
+}
+
+.benefits-item-img {
+  display: none;
+}
+
+.benefits-item-title {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+  color: #000000;
+}
+
+.benefits-item-text {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 30px;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin-top: 15px;
+}
+
+.benefits-item:not(:first-child) {
+  margin-top: 60px;
+}
+
+.loyalty-wrap {
+  display: flex;
+  align-items: center;
+  padding-top: 140px;
+  padding-bottom: 250px;
+}
+
+.loyalty-text-wrap {
+  width: 48.718%;
+  max-width: 570px;
+  margin-right: 30px;
+}
+
+.loyalty-title {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 38px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #000000;
+  margin-top: 15px;
+  padding-left: 30px;
+}
+
+.loyalty-text {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.loyalty-terms {
+  margin-top: 20px;
+}
+
+.loyalty-sponsors-list {
+  display: flex;
+}
+
+.loyalty-link {
+  display: block;
+  width: 100%;
+  background-color: #2B0BF2;
+  border: 1px solid #2B0BF2;
+  border-radius: 100px;
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+.loyalty-carely {
+  display: block;
+  width: 48%;
+  max-width: 270px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loyalty-sponsors-img {
+  width: 82%;
+  max-width: 472px;
+  margin-top: 10px;
 }/*# sourceMappingURL=main.css.map */
